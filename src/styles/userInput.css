@@ -1,0 +1,50 @@
+.nameFormsContainer {
+  background-color: #ffdecb;
+  padding: 1em;
+}
+
+.boardSizeFormContainer {
+  background-color: #f3c7ca;
+  padding: 1em;
+  margin-top: 1em;
+}
+span {
+  margin-right: 0.5em;
+}
+
+input {
+  padding: 0.5em;
+  margin: 1em;
+  border: none !important;
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #9b9b9b;
+  opacity: 1; /* Firefox */
+}
+
+.formError {
+  color: #fe635f;
+  font-weight: bold;
+  margin: 0;
+  font-size: 12px;
+}
+
+button {
+  background-color: #77a1c9;
+  color: white;
+  border: none !important;
+  padding: 0.5em;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.formsContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.playButton {
+  text-align: center;
+}

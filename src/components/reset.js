@@ -1,20 +1,17 @@
 import React from "react";
-import { Link } from "react-router-dom";
+
+import "../styles/reset.css";
 
 class Reset extends React.Component {
   handleOnReset = () => {
     localStorage.clear();
-    window.location.reload();
+    window.location.replace("/");
   };
 
   render() {
     return (
-      <div>
-        <br />
-        <br />
-        <Link to="/">
-          <button onClick={this.handleOnReset}>Reset Game</button>
-        </Link>
+      <div className="resetContainer">
+        <button onClick={this.handleOnReset}>Reset Game</button>
       </div>
     );
   }

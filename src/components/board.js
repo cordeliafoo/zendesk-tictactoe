@@ -3,22 +3,28 @@ import React from "react";
 import Square from "./square.js";
 import * as utils from "../utils/functions";
 
+import "../styles/board.css";
+
 class Board extends React.Component {
   constructor(props) {
     super(props);
+    let gridLength = localStorage.getItem("boardSize") || 3;
+
     this.state = {
-      squares: Array(9).fill(null),
       xIsNext: true,
-      gridLength: 3,
+      gridLength: gridLength,
+      grid: Array(parseInt(gridLength))
+        .fill(null)
+        .map(() => Array(parseInt(gridLength)).fill(null)),
       gameOverWithWinner: false,
       gameOverWithDraw: false,
       winner: ""
     };
   }
 
-  handleSquareClick(index) {
+  handleSquareClick(rowIndex, colIndex) {
     // get current state of boxes
-    const squares = this.state.squares.slice();
+    const grid = this.state.grid.slice();
 
     // Mark the square either as 'x' or 'o'
     const {
@@ -28,25 +34,30 @@ class Board extends React.Component {
       gridLength
     } = this.state;
 
-    if (gameOverWithWinner === false && gameOverWithDraw === false) {
-      squares[index] = xIsNext ? "x" : "o";
+    if (
+      gameOverWithWinner === false &&
+      gameOverWithDraw === false &&
+      grid[rowIndex][colIndex] === null
+    ) {
+      grid[rowIndex][colIndex] = xIsNext ? "x" : "o";
       this.setState({
-        squares: squares,
+        grid: grid,
         xIsNext: !xIsNext
       });
     }
 
-    const winner = utils.findWinner(squares);
+    const winner = utils.findWinner(grid[rowIndex][colIndex], grid, gridLength);
     if (winner) {
       this.setState({ gameOverWithWinner: true, winner: winner });
     }
 
-    if (utils.areAllSquaresClicked(squares, gridLength) === true) {
+    if (utils.areAllSquaresClicked(grid, gridLength) === true) {
       this.setState({ gameOverWithDraw: true });
     }
   }
 
   render() {
+    // console.table(this.state.grid);
     const style = {
       width: "250px",
       height: "250px",
@@ -58,6 +69,7 @@ class Board extends React.Component {
 
     const {
       gridLength,
+      grid,
       xIsNext,
       gameOverWithDraw,
       gameOverWithWinner,
@@ -66,11 +78,6 @@ class Board extends React.Component {
 
     const x = localStorage.getItem("x");
     const o = localStorage.getItem("o");
-
-    let gridLengthArr = [];
-    for (let i = 0; i < gridLength * gridLength; i++) {
-      gridLengthArr[i] = i;
-    }
 
     const displayNextPlayer =
       gameOverWithDraw === false && gameOverWithWinner === false;
@@ -83,13 +90,15 @@ class Board extends React.Component {
         {!!gameOverWithWinner && <p>{winner} wins!</p>}
         {!!gameOverWithDraw && <p>It's a tie!</p>}
         <div className="board" style={style}>
-          {gridLengthArr.map((item, index) => (
-            <Square
-              key={index}
-              value={this.state.squares[index]}
-              onClick={() => this.handleSquareClick(index)}
-            />
-          ))}
+          {grid.map((rowItem, rowIndex) =>
+            grid.map((colItem, colIndex) => (
+              <Square
+                key={`${rowIndex},${colIndex}`}
+                value={this.state.grid[rowIndex][colIndex]}
+                onClick={() => this.handleSquareClick(rowIndex, colIndex)}
+              />
+            ))
+          )}
         </div>
       </div>
     );

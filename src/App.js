@@ -11,9 +11,15 @@ function App() {
     <div className="App">
       <h1>Tic Tac Toe</h1>
       <BrowserRouter>
-        <Route exact path="/" component={UserInput} />
-        <Route path="/board" component={Board} />
-        <Reset />
+        <div className="appContainer">
+          <div>
+            <Route exact path="/" component={UserInput} />
+            <Route path="/board" component={Board} />
+          </div>
+          <div>
+            <Reset />
+          </div>
+        </div>
       </BrowserRouter>
     </div>
   );
