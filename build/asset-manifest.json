@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/zendesk-tictactoe/static/css/main.8cbe38c3.chunk.css",
+    "main.js": "/zendesk-tictactoe/static/js/main.ba47c4b9.chunk.js",
+    "main.js.map": "/zendesk-tictactoe/static/js/main.ba47c4b9.chunk.js.map",
+    "runtime-main.js": "/zendesk-tictactoe/static/js/runtime-main.44453c5f.js",
+    "runtime-main.js.map": "/zendesk-tictactoe/static/js/runtime-main.44453c5f.js.map",
+    "static/js/2.bca939ce.chunk.js": "/zendesk-tictactoe/static/js/2.bca939ce.chunk.js",
+    "static/js/2.bca939ce.chunk.js.map": "/zendesk-tictactoe/static/js/2.bca939ce.chunk.js.map",
+    "index.html": "/zendesk-tictactoe/index.html",
+    "static/css/main.8cbe38c3.chunk.css.map": "/zendesk-tictactoe/static/css/main.8cbe38c3.chunk.css.map",
+    "static/js/2.bca939ce.chunk.js.LICENSE.txt": "/zendesk-tictactoe/static/js/2.bca939ce.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.44453c5f.js",
+    "static/js/2.bca939ce.chunk.js",
+    "static/css/main.8cbe38c3.chunk.css",
+    "static/js/main.ba47c4b9.chunk.js"
+  ]
+}
