@@ -7,12 +7,13 @@ import Reset from "./components/reset.js";
 import "./App.css";
 
 function App() {
+  console.log(process.env);
   return (
     <div className="App">
       <h1>Tic Tac Toe</h1>
       <BrowserRouter
-        // basename="http://cordeliafoo.github.io/zendesk-tictactoe"
-        basename={process.env.PUBLIC_URL}
+        basename="http://cordeliafoo.github.io/zendesk-tictactoe"
+        // basename={process.env.PUBLIC_URL}
       >
         <div className="appContainer">
           <div>
