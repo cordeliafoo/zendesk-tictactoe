@@ -22,3 +22,9 @@ code {
   min-height: 80vh;
   width: 50vw;
 }
+
+.headingContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
