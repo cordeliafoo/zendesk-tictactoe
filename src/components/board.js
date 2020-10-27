@@ -103,7 +103,8 @@ class Board extends React.Component {
           (xIsNext ? <p>{`${x}'s turn`}</p> : <p>{`${o}'s turn`}</p>)}
 
         {!!gameOverWithWinner && <p>{winner} wins!</p>}
-        {!!gameOverWithDraw && <p>It's a tie!</p>}
+        {!!gameOverWithDraw &&
+          gameOverWithWinner === false && <p>It's a tie!</p>}
         <div className="board" style={style}>
           {grid.map((rowItem, rowIndex) =>
             grid.map((colItem, colIndex) => (
