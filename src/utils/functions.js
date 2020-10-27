@@ -116,7 +116,7 @@ function checkDiagRL(playerChosen, grid, gridLength) {
       } else {
         count = 0;
       }
-      if (count === this.countWin) {
+      if (count === winCount) {
         console.log("Win left portion of diagonal top right to bottom left");
         return true;
       }
@@ -134,7 +134,7 @@ export function findWinner(playerChosen, grid, gridLength) {
   if (checkDiagLR(playerChosen, grid, gridLength)) {
     return localStorage.getItem(playerChosen);
   }
-  if (checkDiagRL(playerChosen)) {
+  if (checkDiagRL(playerChosen, grid, gridLength)) {
     return localStorage.getItem(playerChosen);
   }
   // Otherwise do nothing

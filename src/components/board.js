@@ -18,7 +18,8 @@ class Board extends React.Component {
         .map(() => Array(parseInt(gridLength)).fill(null)),
       gameOverWithWinner: false,
       gameOverWithDraw: false,
-      winner: ""
+      winner: "",
+      showPlayAgainButton: false
     };
   }
 
@@ -48,12 +49,20 @@ class Board extends React.Component {
 
     const winner = utils.findWinner(grid[rowIndex][colIndex], grid, gridLength);
     if (winner) {
-      this.setState({ gameOverWithWinner: true, winner: winner });
+      this.setState({
+        gameOverWithWinner: true,
+        winner: winner,
+        showPlayAgainButton: true
+      });
     }
 
     if (utils.areAllSquaresClicked(grid, gridLength) === true) {
-      this.setState({ gameOverWithDraw: true });
+      this.setState({ gameOverWithDraw: true, showPlayAgainButton: true });
     }
+  }
+
+  handlePlayAgainButton() {
+    window.location.reload();
   }
 
   render() {
@@ -68,12 +77,12 @@ class Board extends React.Component {
     };
 
     const {
-      gridLength,
       grid,
       xIsNext,
       gameOverWithDraw,
       gameOverWithWinner,
-      winner
+      winner,
+      showPlayAgainButton
     } = this.state;
 
     const x = localStorage.getItem("x");
@@ -100,6 +109,13 @@ class Board extends React.Component {
             ))
           )}
         </div>
+        {showPlayAgainButton && (
+          <div>
+            <button onClick={() => this.handlePlayAgainButton()}>
+              Play again
+            </button>
+          </div>
+        )}
       </div>
     );
   }
