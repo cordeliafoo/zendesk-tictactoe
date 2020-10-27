@@ -79,7 +79,9 @@ class Board extends React.Component {
       display: "grid",
       gridTemplate: `repeat(${this.state.gridLength}, 1fr)/repeat(${
         this.state.gridLength
-      }, 1fr)`
+      }, 1fr)`,
+      marginBottom: "2em",
+      width: `${this.state.gridLength * 5}vw`
     };
 
     const {

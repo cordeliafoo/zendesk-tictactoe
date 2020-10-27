@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/zendesk-tictactoe/static/css/main.d0f63547.chunk.css",
-    "main.js": "/zendesk-tictactoe/static/js/main.7b06e7da.chunk.js",
-    "main.js.map": "/zendesk-tictactoe/static/js/main.7b06e7da.chunk.js.map",
+    "main.js": "/zendesk-tictactoe/static/js/main.f53277a9.chunk.js",
+    "main.js.map": "/zendesk-tictactoe/static/js/main.f53277a9.chunk.js.map",
     "runtime-main.js": "/zendesk-tictactoe/static/js/runtime-main.44453c5f.js",
     "runtime-main.js.map": "/zendesk-tictactoe/static/js/runtime-main.44453c5f.js.map",
     "static/js/2.4360c69a.chunk.js": "/zendesk-tictactoe/static/js/2.4360c69a.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.44453c5f.js",
     "static/js/2.4360c69a.chunk.js",
     "static/css/main.d0f63547.chunk.css",
-    "static/js/main.7b06e7da.chunk.js"
+    "static/js/main.f53277a9.chunk.js"
   ]
 }

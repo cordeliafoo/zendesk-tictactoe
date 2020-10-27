@@ -3,7 +3,7 @@ import React from "react";
 const gridLength = localStorage.getItem("boardSize");
 
 const style = {
-  height: `calc(50vw/${gridLength})`,
+  height: `calc(${gridLength * 5}vw/${gridLength})`,
   display: "flex",
   alignItems: "center",
   justifyContent: "center"
