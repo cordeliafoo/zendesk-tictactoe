@@ -126,7 +126,7 @@ class UserInput extends React.Component {
           !!player2 &&
           !!boardSize && (
             <div className="playButton">
-              <Link to="/board">
+              <Link to={"/board/"}>
                 <button>Let's play!</button>
               </Link>
             </div>

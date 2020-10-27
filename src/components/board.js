@@ -9,8 +9,13 @@ class Board extends React.Component {
   constructor(props) {
     super(props);
     let gridLength = localStorage.getItem("boardSize") || 3;
+    let defaultValues = this.fillBoardDefaultValues(gridLength);
 
-    this.state = {
+    this.state = { ...defaultValues };
+  }
+
+  fillBoardDefaultValues(gridLength) {
+    return {
       xIsNext: true,
       gridLength: gridLength,
       grid: Array(parseInt(gridLength))
@@ -62,7 +67,10 @@ class Board extends React.Component {
   }
 
   handlePlayAgainButton() {
-    window.location.reload();
+    let gridLength = localStorage.getItem("boardSize") || 3;
+    let defaultValues = this.fillBoardDefaultValues(gridLength);
+
+    this.setState({ ...defaultValues });
   }
 
   render() {

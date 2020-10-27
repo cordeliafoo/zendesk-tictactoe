@@ -5,7 +5,7 @@ import "../styles/reset.css";
 class Reset extends React.Component {
   handleOnReset = () => {
     localStorage.clear();
-    window.location.replace("/");
+    window.location = process.env.PUBLIC_URL;
   };
 
   render() {
