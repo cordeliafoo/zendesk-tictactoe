@@ -122,6 +122,7 @@ class UserInput extends React.Component {
             </div>
           )}
         <br />
+
         {!!player1 &&
           !!player2 &&
           !!boardSize && (
