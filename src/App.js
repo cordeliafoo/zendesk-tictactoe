@@ -10,7 +10,10 @@ function App() {
   return (
     <div className="App">
       <h1>Tic Tac Toe</h1>
-      <BrowserRouter>
+      <BrowserRouter
+        // basename="http://cordeliafoo.github.io/zendesk-tictactoe"
+        basename={process.env.PUBLIC_URL}
+      >
         <div className="appContainer">
           <div>
             <Route exact path="/" component={UserInput} />
